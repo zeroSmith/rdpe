@@ -1,0 +1,1 @@
+var sidebarScrollConf = {cursorborder: "1px #1e282c"};

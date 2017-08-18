@@ -1,0 +1,244 @@
+@CHARSET "UTF-8";
+
+/*左侧菜单的样式*/
+
+
+/*
+var colorArray = ['#feb13c', '#ff9085', '#15b973', '#fecb68', '#8ec2fc', '#f493b2', '#f493b2', '#ff7062'];
+*/
+
+#leftBar {
+    background-color: #2b303b;
+    height: 100%;
+}
+
+#sideBarHead {
+    height: 35px;
+}
+
+.lBarCtrl {
+    border-bottom: 1px solid #3d4757;
+    background-color: #2b303b;
+    height: 34px;
+    border-left: 3px solid #2b303b;
+}
+
+#sideBarHead span {
+    font-size: 14px;
+}
+
+#sideBarHead span,
+.menuText {
+    color: #fff;
+    font-size: 13px;
+    display: block;
+    float: left;
+    position: relative;
+    line-height: 35px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.level1 .menuText {
+    max-width: 123px;
+    height:30px;
+    line-height: 31px;
+}
+
+.level2 .menuText {
+    width: 134px;
+    height:30px;
+    line-height: 31px;
+}
+
+.sIcon {
+    width: 34px;
+    margin-right: 3px;
+    color: #aeb9c2;
+    height: 35px;
+    display: block;
+    font-size: 18px;
+    font-weight: 100;
+    float: left;
+    text-align: center;
+    line-height: 37px;
+}
+
+.sIcon:hover {
+    color: #fff;
+}
+
+.open > a > i.sIcon {
+    color: #fff;
+}
+
+.level1 i.sIcon {
+    background: transparent url(../../img/frame/levelArrow.png) no-repeat center center;
+    color: #909397;
+    font-size: 13px;
+    width: 12px;
+    margin-right: 8px;
+    margin-top: 0;
+    height: 30px;
+}
+
+.lBarCtrl > .sIcon {
+    font-size: 14px;
+}
+
+.lBarCtrl > .toggleIcon {
+    float: right;
+    font-size: 17px;
+    width: 42px;
+    padding: 0;
+    margin: 0;
+}
+
+#sideBarHead span {
+    width: auto;
+}
+
+.bonc-nav {
+    background-color: #2b303b;
+}
+
+.bonc-nav a {
+    display: block;
+    overflow: hidden;
+    clear: both;
+}
+
+.arrow {
+    display: none;
+}
+
+.closeArrow,
+.openArrow {
+    display: block;
+    float: right;
+    color: rgba(255, 255, 255, .8);
+}
+
+.closeArrow {
+    font-size: 12px;
+}
+
+.openArrow {
+    font-size: 10px;
+}
+
+.toggleIcon {
+    cursor: pointer;
+}
+
+.submenu {
+    display: none;
+}
+
+.level0 > a {
+    border-left: 3px solid #2b303b;
+}
+
+.level0.open > a,
+.level0 > a:hover {
+    background-color: #21252d;
+    border-left: 3px solid #ff7062;
+}
+
+
+.level1 > a:hover,
+.level1.open > a {
+    background-color: #2e333d;
+}
+
+.level1 > a {
+    padding-left: 25px;
+    background-color: #161b26;
+}
+
+.level2 > a {
+    padding-left: 50px;
+    background-color: #21252d;
+}
+
+.level2 > a:hover span {
+    color: #ff7062;
+}
+
+.level2 > a > b {
+    display: none;
+}
+
+.simpleLBar .funIcon,
+.simpleLBar #sideBarHead span,
+.simpleLBar .menuText,
+.simpleLBar .submenu {
+    display: none;
+}
+
+.simpleLBar .level0 > a > .menuText {
+    position: absolute;
+    color: #fff;
+    left: 42px;
+    width: 185px;
+    background-color: #282e36;
+    text-align: left;
+    line-height: 40px;
+    height: 35px;
+    padding-left: 15px;
+    z-index: 9999;
+    border-bottom: 1px solid #383e4b;
+    border-radius: 0 3px 0 0;
+}
+
+.simpleLBar .hoverShow .menuText {
+    display: inline-block;
+}
+
+.hoverShow .level1 > a {
+    padding-left: 8px;
+    background-color: #2e333d;
+}
+
+
+.hoverShow .level1.open > a,
+.hoverShow .level1 > a:hover {
+    background-color: #171b22;
+}
+
+.hoverShow .level2 > a {
+    padding-left: 20px;
+}
+
+.hoverShow {
+    position: absolute;
+    left: 42px;
+    width: 185px;
+    background-color: #F2F2F2;
+    z-index: 9999;
+}
+
+.hoverShow .closeArrow,
+.hoverShow .openArrow {
+    display: block;
+}
+
+.hoverShow .submenu {
+    width: 185px;
+    z-index: 9999;
+}
+
+.hoverShow > .lastli > a,
+.hoverShow > .lastli .lastli > a {
+    border-radius: 0 0 3px 0;
+}
+
+.hoverShow .open.lastli > a {
+    border-radius: 0;
+}
+
+.simpleLBar .level0 > a > .arrow,
+.simpleLBar .level2 > a > .arrow {
+    display: none;
+}

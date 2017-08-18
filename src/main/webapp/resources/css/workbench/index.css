@@ -1,0 +1,400 @@
+@CHARSET "UTF-8";
+body{
+	background-color:#eceff4;
+}
+.content {
+    padding-right: 8px;
+    padding-left: 8px;
+    margin: 0 10px;
+    height: 100%;
+}
+.part{
+	background-color:#fff;
+	border-radius:10px;
+	height:50%;
+	min-height:260px;
+	margin-top:10px;
+	padding-top:10px;
+}
+.col-md-4{
+	padding-left:5px;
+	padding-right:5px;
+}
+p.title {
+    font-size: 16px;
+    border-left: 4px solid #f64241;
+    padding-left: 11px;
+    margin-bottom: 10px;
+}
+hr{
+	background-color:#ddd;
+	margin: 0;
+}
+/*---用户信息模块---*/
+.part.userInfo {
+    background-color: transparent;
+}
+.userIcon {
+    position: absolute;
+    left:0;
+    top:13px;
+    z-index: 10;
+}
+.info {
+    padding-left: 85px;
+    background:transparent url(../../img/workbench/line.png) repeat-x left bottom;
+    padding-bottom: 10px;
+   
+}
+.info span, .editLinks span {
+    font-size: 14px;
+}
+.part > .userMain{
+	background-color:#fff;
+	border-radius:10px;
+	min-height: 227px;
+    width: 96%;
+    margin-left: 4%;
+    top: 33px;
+    position: relative;
+    padding: 29px 6px;
+}
+.editLinkWrapper {
+	overflow:hidden;    
+    width: 100%;   
+    margin: 14px auto 0;
+}
+.editLinks{
+	display:block;
+	overflow:hidden;
+    width: 100%;
+    padding: 0 3px;
+    margin: 0 auto;
+}
+.editLinks a{
+	width:33.3%;
+	text-align:center;
+}
+.editLinks span{
+	padding-left:9px;
+	top: -6px;
+    position: relative;
+}
+.editLinks .icon{
+	width:25px;
+	height:24px;
+	display:inline-block;
+}
+.likeIcon .icon{
+	background:transparent url(../../img/workbench/like.png) no-repeat center center;
+	background-size:auto 100%;
+}
+
+.personalIcon .icon{
+	background:transparent url(../../img/workbench/personal.png) no-repeat center center;
+	background-size:auto 100%;
+}
+
+.editIcon .icon{
+	background:transparent url(../../img/workbench/modifyUserInfo.png) no-repeat center center;
+	background-size:auto 100%;
+}
+
+
+/*---应用列表模块---*/
+
+.applistWrap{
+	overflow:hidden;
+	width: 100%;
+	padding:0 5.7%;
+    margin: 0 auto;
+}
+.applistWrap .icon{
+	width:49px;
+	height:48px;
+	display:block;
+	margin:0 auto;
+}
+
+.list1{
+	background-image:url(../../img/workbench/camera2.png);
+}
+.list2{
+	background-image:url(../../img/workbench/calendar2.png);
+}
+.list3{
+	background-image:url(../../img/workbench/browser2.png);
+}
+.list4{
+	background-image:url(../../img/workbench/browser.png);
+}
+.list5{
+	background-image:url(../../img/workbench/camera.png);
+}
+.list6{
+	background-image:url(../../img/workbench/calendar.png);
+}
+.list7{
+	background-image:url(../../img/workbench/estates.png);
+}
+.list8{
+	background-image:url(../../img/workbench/TV.png);
+}
+.applistWrap > a {
+	width:25%;
+	height:50%;
+/*     padding: 19px 18px 0 18px; */
+    text-align: center;
+}
+.applistWrap span {
+    padding-top: 11px;
+    display: inline-block;
+    font-size: 14px;
+}
+
+/*---最新新闻排序表模块---*/
+.sortListWrap > ul {
+    padding: 2% 0;
+    height:100%;
+    overflow:hidden;
+}
+.sortListWrap li {
+    margin: 12px 0;
+    clear: both;
+}
+.sortListWrap .firSort {
+	margin-top:0;
+}
+.sortListWrap li span {
+    font-size: 14px;
+    display:block;
+    float:left;
+}
+.sortListWrap li a span {
+	 border-left: 1px solid #dcdcdc;
+}
+.sort {
+    color: #e35a52;
+    padding: 3px 9px;
+}
+.newsName {
+    padding-left: 9px;
+    width: 70%;
+    width: -moz-calc(100% - 88px);
+    width: -webkit-calc(100% - 88px);
+    width: calc(100% - 88px);
+    display: inline-block;
+}
+.newsTime {
+	margin-right: 8px;
+}
+/* 滚动条 */
+.nicescroll-cursors {
+	background:#ccc !important;
+}
+
+/*---summary薪资模块---*/
+.red{
+	color:#f64241;
+	font-size:14px;
+}
+.summaryWrap > hr{
+	width: 80%;
+    margin: 0 auto;
+}
+.summaryWrap > div p {
+    text-align: center;
+}
+.summaryWrap > p{
+	height:15%;
+	position:relative;
+	margin-bottom:0;
+}
+.sumTit {
+	position:absolute;
+	left:20px;
+	top:50%;
+	margin-top:-7px;
+	font-size:14px;
+}
+.basicTopInfo {
+	height:40%;
+	padding-top:5%;
+}
+.basicName,.basicApm,.basicAcount{
+	border-right:1px solid #ddd;
+}
+
+/*日历模块*/
+.dateWrap{
+	padding:20px;
+}
+#dateArrange{
+	margin:0 auto;
+}
+/* .calendar-header {
+	display:none;
+}
+.calendar .calendar-dtable th {
+	font-size:14px;
+	color:#f64241;
+	padding:13px 0;
+}
+	
+.calendar .calendar-dtable tr .calendar-selected, .calendar .calendar-dtable tr .calendar-nav-hover {
+	border:none;
+	-webkit-border-radius:50%;
+	-moz-border-radius:50%;
+	-ms-border-radius:50%;
+	-o-border-radius:50%;
+	border-radius:50%;
+}
+.calendar .calendar-dtable tr .calendar-selected {	
+	color:#fff;
+	background:url(../../img/workbench/circleRed.png) no-repeat center center;
+	background-size:auto 100%;
+}
+.calendar .calendar-dtable tr .calendar-nav-hover {	
+	color:#000;
+	background:url(../../img/workbench/circleBlue.png) no-repeat center center;
+	background-size:auto 100%;
+}
+.dateWrap .calendar {
+	border:none;
+} */
+
+.ui-widget.ui-widget-content, .ui-datepicker {
+    border: medium none;
+    height: 100%;
+    width: 100%;
+}
+.ui-widget-header{
+	background: transparent;
+	border: medium none;
+}
+.ui-datepicker select.ui-datepicker-month,.ui-datepicker select.ui-datepicker-year {
+    border: 1px solid #d4d4d4;
+    font-size: 14px;
+    height: 25px;
+    text-align: center;
+    outline: none;
+}
+.ui-datepicker select.ui-datepicker-month option, .ui-datepicker select.ui-datepicker-year option {
+    width: 100%;
+    font-size: 14px;
+    border-width: 0;
+    outline: none;
+}
+.ui-datepicker .ui-datepicker-title{
+	font-size:14px;
+}
+.ui-datepicker select.ui-datepicker-year {
+    margin-right: 3%;
+    width: 40%;
+}
+.ui-datepicker select.ui-datepicker-month{
+	margin-left: 5%;
+	width: 40%;
+}
+.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next{
+	height: 25px;
+    top: 4px;
+    width: 25px;
+}
+.ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span {
+    background: transparent url("../../img/workbench/leftMore.png") repeat scroll 0 0;
+    height: 25px;
+    left: 0;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    width: 25px;
+    cursor: pointer;
+}
+.ui-datepicker .ui-datepicker-next span {
+	background: transparent url("../../img/workbench/rightMore.png") no-repeat scroll center center;
+}
+.ui-datepicker .ui-datepicker-prev.ui-state-hover span{
+	background: transparent url("../../img/workbench/leftMoreHover.png") no-repeat scroll center center;
+}
+.ui-datepicker .ui-datepicker-next.ui-state-hover span {
+	background: transparent url("../../img/workbench/rightMoreHover.png") no-repeat scroll center center;
+}
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus, .ui-button:hover, .ui-button:focus{
+	background-color: transparent;
+	border: none;
+}
+.ui-datepicker td a, .ui-state-default, .ui-widget-content .ui-state-default {
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    font-size: 14px;
+    color: #323232;
+    padding: 6px 0;
+}
+.ui-datepicker th span{
+    color: #f74240;
+    font-size: 14px;
+}
+.ui-state-default:hover{
+    background: transparent url("../../img/workbench/circleBlue.png") no-repeat scroll center center;
+    background-size: auto 95%;
+}
+.ui-datepicker .ui-state-active{
+	color: #fff;
+	background: transparent url("../../img/workbench/circleRed.png") no-repeat scroll center center;
+	background-size: auto 95%;
+}
+/*当屏幕尺寸小于1350px时，应用下面的CSS样式*/
+@media screen and (max-width: 1367px) {
+	.ui-datepicker td a, .ui-state-default, .ui-widget-content .ui-state-default{
+		padding: 4px 0;
+	}
+	.dateWrap{
+		padding:10px;
+	}
+}
+@media (min-width: 830px){
+	.col-md-4 {
+	    width: 33.33333333%;
+	}
+	.basicTopInfo .col-md-6 {
+	    width: 50%;
+	}
+	.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+	    float: left;
+	}
+}
+@media (max-width: 831px) and (min-width:500px){
+	.col-md-4 {
+	    width: 50%;
+	}
+	.basicTopInfo .col-md-4 {
+	    width: 33.33333333%;
+	}
+	.basicTopInfo .col-md-6 {
+	    width: 50%;
+	}
+	.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+	    float: left;
+	}
+	.container-fluid{
+		padding-bottom:20px;
+	}
+}
+@media (max-width: 499px){
+	.col-md-4 {
+	    width: 100%;
+	}
+	.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+	    float: none;
+	}
+	.basicTopInfo .col-md-4 {
+	    width: 33.33333333%;
+	    float: left;
+	}
+	.basicTopInfo .col-md-6 {
+	    width: 50%;
+	    float: left;
+	}
+}

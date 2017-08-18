@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bonc.rdpe.entity.DsKafka" >
+  <resultMap id="BaseResultMap" type="com.bonc.rdpe.entity.DsKafka" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="ds_name" property="dsName" jdbcType="VARCHAR" />
+    <result column="topic_name" property="topicName" jdbcType="VARCHAR" />
+    <result column="zk_list" property="zkList" jdbcType="VARCHAR" />
+    <result column="broker_list" property="brokerList" jdbcType="VARCHAR" />
+    <result column="group_id" property="groupId" jdbcType="VARCHAR" />
+    <result column="create_id" property="createId" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="org_id" property="orgId" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, ds_name, topic_name, zk_list, broker_list, group_id, create_id, create_time, 
+    org_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_ds_kafka
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from t_ds_kafka
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.bonc.rdpe.entity.DsKafka" >
+    insert into t_ds_kafka (id, ds_name, topic_name, 
+      zk_list, broker_list, group_id, 
+      create_id, create_time, org_id
+      )
+    values (#{id,jdbcType=VARCHAR}, #{dsName,jdbcType=VARCHAR}, #{topicName,jdbcType=VARCHAR}, 
+      #{zkList,jdbcType=VARCHAR}, #{brokerList,jdbcType=VARCHAR}, #{groupId,jdbcType=VARCHAR}, 
+      #{createId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{orgId,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.bonc.rdpe.entity.DsKafka" >
+    insert into t_ds_kafka
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="dsName != null" >
+        ds_name,
+      </if>
+      <if test="topicName != null" >
+        topic_name,
+      </if>
+      <if test="zkList != null" >
+        zk_list,
+      </if>
+      <if test="brokerList != null" >
+        broker_list,
+      </if>
+      <if test="groupId != null" >
+        group_id,
+      </if>
+      <if test="createId != null" >
+        create_id,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="orgId != null" >
+        org_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="dsName != null" >
+        #{dsName,jdbcType=VARCHAR},
+      </if>
+      <if test="topicName != null" >
+        #{topicName,jdbcType=VARCHAR},
+      </if>
+      <if test="zkList != null" >
+        #{zkList,jdbcType=VARCHAR},
+      </if>
+      <if test="brokerList != null" >
+        #{brokerList,jdbcType=VARCHAR},
+      </if>
+      <if test="groupId != null" >
+        #{groupId,jdbcType=VARCHAR},
+      </if>
+      <if test="createId != null" >
+        #{createId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orgId != null" >
+        #{orgId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bonc.rdpe.entity.DsKafka" >
+    update t_ds_kafka
+    <set >
+      <if test="dsName != null" >
+        ds_name = #{dsName,jdbcType=VARCHAR},
+      </if>
+      <if test="topicName != null" >
+        topic_name = #{topicName,jdbcType=VARCHAR},
+      </if>
+      <if test="zkList != null" >
+        zk_list = #{zkList,jdbcType=VARCHAR},
+      </if>
+      <if test="brokerList != null" >
+        broker_list = #{brokerList,jdbcType=VARCHAR},
+      </if>
+      <if test="groupId != null" >
+        group_id = #{groupId,jdbcType=VARCHAR},
+      </if>
+      <if test="createId != null" >
+        create_id = #{createId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orgId != null" >
+        org_id = #{orgId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bonc.rdpe.entity.DsKafka" >
+    update t_ds_kafka
+    set ds_name = #{dsName,jdbcType=VARCHAR},
+      topic_name = #{topicName,jdbcType=VARCHAR},
+      zk_list = #{zkList,jdbcType=VARCHAR},
+      broker_list = #{brokerList,jdbcType=VARCHAR},
+      group_id = #{groupId,jdbcType=VARCHAR},
+      create_id = #{createId,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      org_id = #{orgId,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectAllByCondition" parameterType="map" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from t_ds_kafka
+		where 1=1
+		<if test="dsName != null and dsName != ''">
+			and ds_name like '%${dsName}%'
+		</if>
+		<if test="topicName != null and topicName != ''">
+			and topic_name like '%${topicName}%'
+		</if>
+		<if test="createId != null">
+			and create_id = #{createId,jdbcType=VARCHAR}
+		</if>
+	</select>
+
+	<!-- 查询出所有的数据 -->
+	<select id="selectAll" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from t_ds_kafka
+	</select>
+</mapper>

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bonc.rdpe.entity.DsRedis">
+	<resultMap id="BaseResultMap" type="com.bonc.rdpe.entity.DsRedis">
+		<id column="id" jdbcType="VARCHAR" property="id" />
+		<result column="ds_name" jdbcType="VARCHAR" property="dsName" />
+		<result column="host_ip" jdbcType="VARCHAR" property="hostIp" />
+		<result column="host_port" jdbcType="VARCHAR" property="hostPort" />
+		<result column="pwd" jdbcType="VARCHAR" property="pwd" />
+		<result column="pk" jdbcType="VARCHAR" property="pk" />
+		<result column="resultset_type" jdbcType="VARCHAR" property="resultsetType" />
+		<result column="create_id" jdbcType="VARCHAR" property="createId" />
+		<result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+		<result column="org_id" jdbcType="VARCHAR" property="orgId" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, ds_name, host_ip, host_port, pwd, pk, resultset_type,create_id, create_time,org_id
+	</sql>
+	<select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from t_ds_redis
+		where id = #{id,jdbcType=VARCHAR}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+		delete from t_ds_redis
+		where id = #{id,jdbcType=VARCHAR}
+	</delete>
+	<insert id="insert" parameterType="com.bonc.rdpe.entity.DsRedis">
+		insert into t_ds_redis (id, ds_name, host_ip,
+		host_port, pwd, pk,
+		resultset_type, create_id, create_time,org_id
+		)
+		values (#{id,jdbcType=VARCHAR},
+		#{dsName,jdbcType=VARCHAR},
+		#{hostIp,jdbcType=VARCHAR},
+		#{hostPort,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR}, #{pk,jdbcType=VARCHAR},
+		#{resultsetType,jdbcType=VARCHAR}, #{createId,jdbcType=VARCHAR},
+		#{createTime,jdbcType=TIMESTAMP},#{org_id,jdbcType=VARCHAR}
+		)
+	</insert>
+	<insert id="insertSelective" parameterType="com.bonc.rdpe.entity.DsRedis">
+		insert into t_ds_redis
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="dsName != null">
+				ds_name,
+			</if>
+			<if test="hostIp != null">
+				host_ip,
+			</if>
+			<if test="hostPort != null">
+				host_port,
+			</if>
+			<if test="pwd != null">
+				pwd,
+			</if>
+			<if test="pk != null">
+				pk,
+			</if>
+			<if test="resultsetType != null">
+				resultset_type,
+			</if>
+			<if test="createId != null">
+				create_id,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+			<if test="orgId != null">
+				org_id,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=VARCHAR},
+			</if>
+			<if test="dsName != null">
+				#{dsName,jdbcType=VARCHAR},
+			</if>
+			<if test="hostIp != null">
+				#{hostIp,jdbcType=VARCHAR},
+			</if>
+			<if test="hostPort != null">
+				#{hostPort,jdbcType=VARCHAR},
+			</if>
+			<if test="pwd != null">
+				#{pwd,jdbcType=VARCHAR},
+			</if>
+			<if test="pk != null">
+				#{pk,jdbcType=VARCHAR},
+			</if>
+			<if test="resultsetType != null">
+				#{resultsetType,jdbcType=VARCHAR},
+			</if>
+			<if test="createId != null">
+				#{createId,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="orgId != null">
+				#{org_id,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="com.bonc.rdpe.entity.DsRedis">
+		update t_ds_redis
+		<set>
+			<if test="dsName != null">
+				ds_name = #{dsName,jdbcType=VARCHAR},
+			</if>
+			<if test="hostIp != null">
+				host_ip = #{hostIp,jdbcType=VARCHAR},
+			</if>
+			<if test="hostPort != null">
+				host_port = #{hostPort,jdbcType=VARCHAR},
+			</if>
+			<if test="pwd != null">
+				pwd = #{pwd,jdbcType=VARCHAR},
+			</if>
+			<if test="pk != null">
+				pk = #{pk,jdbcType=VARCHAR},
+			</if>
+			<if test="resultsetType != null">
+				resultset_type = #{resultsetType,jdbcType=VARCHAR},
+			</if>
+			<if test="createId != null">
+				create_id = #{createId,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				create_time = #{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="orgId != null">
+				#{org_id,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where id = #{id,jdbcType=VARCHAR}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="com.bonc.rdpe.entity.DsRedis">
+		update t_ds_redis
+		set ds_name = #{dsName,jdbcType=VARCHAR},
+		host_ip = #{hostIp,jdbcType=VARCHAR},
+		host_port = #{hostPort,jdbcType=VARCHAR},
+		pwd =
+		#{pwd,jdbcType=VARCHAR},
+		pk = #{pk,jdbcType=VARCHAR},
+		resultset_type = #{resultsetType,jdbcType=VARCHAR},
+		create_id = #{createId,jdbcType=VARCHAR},
+		create_time = #{createTime,jdbcType=TIMESTAMP},
+		org_id = #{orgId,jdbcType=VARCHAR}
+		where id
+		= #{id,jdbcType=VARCHAR}
+	</update>
+
+	<select id="selectAllByCondition" parameterType="map" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from t_ds_redis
+		where 1=1
+		<if test="hostIp != null and hostIp != ''">
+			and host_ip like '%${hostIp}%'
+		</if>
+		<if test="dsName != null and dsName != ''">
+			and ds_name like '%${dsName}%'
+		</if>
+		<if test="createId != null">
+			and create_id = #{createId,jdbcType=VARCHAR}
+		</if>
+	</select>
+
+	<!-- 查询出所有的数据 -->
+	<select id="selectAll" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from t_ds_redis
+	</select>
+</mapper>

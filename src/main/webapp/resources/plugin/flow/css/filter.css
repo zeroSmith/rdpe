@@ -1,0 +1,205 @@
+/* filter.html */
+.conTitle{
+    font-size: 14px;
+    font-weight: bolder;
+    margin-left: 6px;
+    margin-bottom: 6px;
+}
+.treeInfo{
+    width: 98%;
+    padding: 5px;
+    height: 100%;
+}
+
+.flowTreeInfo{
+    width: 30%;
+}
+.zTreeContent{
+    width: 66%;
+}
+.ruleTreeInfo{
+    width: 17%;
+}
+.left{
+    float: left;
+}
+.clearBtn{
+    float:right;
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+    outline: none;
+    border: 1px;
+    padding: 5px 10px;
+    border-radius: 2px;
+    margin-right: 9px;
+}
+.addFilterBtn{
+    float:right;
+    color: #fff;
+    background-color: #F5922D;
+    border-color: #F5922D;
+    outline: none;
+    border: 1px;
+    padding: 5px 10px;
+    border-radius: 2px;
+}
+.delete{
+    float:right;
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+    outline: none;
+    border: 1px;
+    padding: 5px 10px;
+    border-radius: 2px;
+    margin-top: 8px;
+}
+.moveActive{
+    border:1px solid #4496DF!important;
+}
+.condition{
+    height: 200px;
+    border: 1px solid #D2D2D2;
+}
+.condition div{
+    padding-left: 5px;
+}
+.condition div p{
+    color: #4897F4;
+    font-weight: 600;
+    font-size: 12px;
+}
+.conditionList{
+    width: 25%;
+    height: 100%;
+    float: left;
+    background-color: #EEEEEE;
+    border-right: 1px solid #fff;
+    margin-right: 0px;
+    overflow-y: auto;
+}
+.conditionDescribe{
+    width: 32%;
+    height: 100%;
+    float: left;
+    background-color: #F3F3F3;
+    border-right: 1px solid #fff;
+    overflow-y: auto;
+}
+.conditionPara{
+    width: 28%;
+    height: 98%;
+    float: left;
+    background-color: #F8F8F8;
+    overflow-y: auto;
+    border: 1px solid #fff;
+}
+.conditionBtn{
+    width: 9%;
+    height: 100%;
+    float: left;
+    padding: 5px;
+}
+.conditionDescribe > div>p {
+    width: 70%;
+    width: -moz-calc(100% - 60px);
+    width: -webkit-calc(100% - 60px);
+    width: calc(100% - 60px);
+    word-break: break-word;
+    font-size: 12px;
+    color: #666;
+    font-weight: normal;
+    margin-top: 0px;
+    margin-bottom: 2px;
+    float: left;
+}
+.conditionDescribe > div {
+    overflow: hidden;
+    float: none; 
+}
+.conditionDescribe > div>p.discribe {
+    width: 40px;
+    text-align: right;
+    float: left; 
+    display: block;
+
+}
+.conditionList .conditionTit{
+    margin-bottom: 0px;
+}
+.conditionDescribe .conditionTit{
+    margin-bottom: 6px;
+}
+.conditionPara .conditionTit{
+    margin-bottom: 6px;
+}
+.conditionTit{
+    margin-top: 6px;
+}
+.conditionPara > ul {
+    padding-left: 10px;
+    margin-top: 0px;
+    margin-bottom: 6px;
+}
+.conditionPara > ul > li {
+    list-style-type: decimal;
+    list-style-position: inside;
+    font-size: 12px;
+    color: #666;
+}
+li.active{
+    color:#4796f2!important;
+}
+.conditionPara li{
+    cursor: pointer;
+}
+
+
+.zTreeFilterContent{
+    width: 68%;
+}
+.filterKeyCon{
+    resize: none;
+    width: 98%;
+    height: 90px;
+    padding: 5px;
+    border: 1px solid #D2D2D2;
+    outline: none;
+}
+.operatorCon{
+    height: 34px;
+    border: 1px solid #D2D2D2;
+    margin-bottom: 3px;
+}
+.operatorCon div{
+    margin: 3px;
+}
+.conditonCon input[type='button'] {
+    width: 40px;
+    height: 24px;
+    margin: 0 1px;
+    color: #4B4B4B;
+    background-color: #fff;
+    border: 1px solid #D2D2D2;
+    outline: none;
+}
+/* .conditonCon input[type='button'] {
+    width: 26px;
+} */
+.operatorCon .conditonCon {
+    float: left;
+    margin: 4px 6px;
+}
+.operatorCon input[type='button']:hover {
+    color: #fff;
+    background-color: #F5922D;
+    border: none;
+}
+.definedParaCon{
+    margin-bottom:2px;
+    border-radius:2px;
+    border: 1px solid #ddd;
+    text-indent: 4px;
+    width: 39%;
+}

@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bonc.rdpe.entity.FunDef">
+	<resultMap id="BaseResultMap" type="com.bonc.rdpe.entity.FunDef" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="parent_id" property="parentId" jdbcType="VARCHAR" />
+    <result column="fun_type_id" property="funTypeId" jdbcType="VARCHAR" />
+    <result column="fun_name" property="funName" jdbcType="VARCHAR" />
+    <result column="input_param" property="inputParam" jdbcType="VARCHAR" />
+    <result column="output_param" property="outputParam" jdbcType="VARCHAR" />
+    <result column="data_type" property="dataType" jdbcType="VARCHAR" />
+    <result column="package_name" property="packageName" jdbcType="VARCHAR" />
+    <result column="parse_format" property="parseFormat" jdbcType="VARCHAR" />
+    <result column="method_description" property="methodDescription" jdbcType="VARCHAR" />
+    <result column="ord" property="ord" jdbcType="DECIMAL" />
+    <result column="path" property="path" jdbcType="VARCHAR" />
+    <result column="store_path" property="storePath" jdbcType="VARCHAR" />
+    <result column="create_id" property="createId" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, parent_id, fun_type_id, fun_name, input_param, output_param, data_type, package_name, 
+    parse_format, method_description, ord, path, store_path, create_id, create_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_fun_def
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from t_fun_def
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.bonc.rdpe.entity.FunDef" >
+    insert into t_fun_def (id, parent_id, fun_type_id, 
+      fun_name, input_param, output_param, 
+      data_type, package_name, parse_format, 
+      method_description, ord, path, 
+      store_path, create_id, create_time
+      )
+    values (#{id,jdbcType=VARCHAR}, #{parentId,jdbcType=VARCHAR}, #{funTypeId,jdbcType=VARCHAR}, 
+      #{funName,jdbcType=VARCHAR}, #{inputParam,jdbcType=VARCHAR}, #{outputParam,jdbcType=VARCHAR}, 
+      #{dataType,jdbcType=VARCHAR}, #{packageName,jdbcType=VARCHAR}, #{parseFormat,jdbcType=VARCHAR}, 
+      #{methodDescription,jdbcType=VARCHAR}, #{ord,jdbcType=DECIMAL}, #{path,jdbcType=VARCHAR}, 
+      #{storePath,jdbcType=VARCHAR}, #{createId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.bonc.rdpe.entity.FunDef" >
+    insert into t_fun_def
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="parentId != null" >
+        parent_id,
+      </if>
+      <if test="funTypeId != null" >
+        fun_type_id,
+      </if>
+      <if test="funName != null" >
+        fun_name,
+      </if>
+      <if test="inputParam != null" >
+        input_param,
+      </if>
+      <if test="outputParam != null" >
+        output_param,
+      </if>
+      <if test="dataType != null" >
+        data_type,
+      </if>
+      <if test="packageName != null" >
+        package_name,
+      </if>
+      <if test="parseFormat != null" >
+        parse_format,
+      </if>
+      <if test="methodDescription != null" >
+        method_description,
+      </if>
+      <if test="ord != null" >
+        ord,
+      </if>
+      <if test="path != null" >
+        path,
+      </if>
+      <if test="storePath != null" >
+        store_path,
+      </if>
+      <if test="createId != null" >
+        create_id,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null" >
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+      <if test="funTypeId != null" >
+        #{funTypeId,jdbcType=VARCHAR},
+      </if>
+      <if test="funName != null" >
+        #{funName,jdbcType=VARCHAR},
+      </if>
+      <if test="inputParam != null" >
+        #{inputParam,jdbcType=VARCHAR},
+      </if>
+      <if test="outputParam != null" >
+        #{outputParam,jdbcType=VARCHAR},
+      </if>
+      <if test="dataType != null" >
+        #{dataType,jdbcType=VARCHAR},
+      </if>
+      <if test="packageName != null" >
+        #{packageName,jdbcType=VARCHAR},
+      </if>
+      <if test="parseFormat != null" >
+        #{parseFormat,jdbcType=VARCHAR},
+      </if>
+      <if test="methodDescription != null" >
+        #{methodDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="ord != null" >
+        #{ord,jdbcType=DECIMAL},
+      </if>
+      <if test="path != null" >
+        #{path,jdbcType=VARCHAR},
+      </if>
+      <if test="storePath != null" >
+        #{storePath,jdbcType=VARCHAR},
+      </if>
+      <if test="createId != null" >
+        #{createId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+   </insert>
+	<update id="updateByPrimaryKeySelective" parameterType="com.bonc.rdpe.entity.FunDef" >
+    update t_fun_def
+    <set >
+      <if test="parentId != null" >
+        parent_id = #{parentId,jdbcType=VARCHAR},
+      </if>
+      <if test="funTypeId != null" >
+        fun_type_id = #{funTypeId,jdbcType=VARCHAR},
+      </if>
+      <if test="funName != null" >
+        fun_name = #{funName,jdbcType=VARCHAR},
+      </if>
+      <if test="inputParam != null" >
+        input_param = #{inputParam,jdbcType=VARCHAR},
+      </if>
+      <if test="outputParam != null" >
+        output_param = #{outputParam,jdbcType=VARCHAR},
+      </if>
+      <if test="dataType != null" >
+        data_type = #{dataType,jdbcType=VARCHAR},
+      </if>
+      <if test="packageName != null" >
+        package_name = #{packageName,jdbcType=VARCHAR},
+      </if>
+      <if test="parseFormat != null" >
+        parse_format = #{parseFormat,jdbcType=VARCHAR},
+      </if>
+      <if test="methodDescription != null" >
+        method_description = #{methodDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="ord != null" >
+        ord = #{ord,jdbcType=DECIMAL},
+      </if>
+      <if test="path != null" >
+        path = #{path,jdbcType=VARCHAR},
+      </if>
+      <if test="storePath != null" >
+        store_path = #{storePath,jdbcType=VARCHAR},
+      </if>
+      <if test="createId != null" >
+        create_id = #{createId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bonc.rdpe.entity.FunDef" >
+    update t_fun_def
+    set parent_id = #{parentId,jdbcType=VARCHAR},
+      fun_type_id = #{funTypeId,jdbcType=VARCHAR},
+      fun_name = #{funName,jdbcType=VARCHAR},
+      input_param = #{inputParam,jdbcType=VARCHAR},
+      output_param = #{outputParam,jdbcType=VARCHAR},
+      data_type = #{dataType,jdbcType=VARCHAR},
+      package_name = #{packageName,jdbcType=VARCHAR},
+      parse_format = #{parseFormat,jdbcType=VARCHAR},
+      method_description = #{methodDescription,jdbcType=VARCHAR},
+      ord = #{ord,jdbcType=DECIMAL},
+      path = #{path,jdbcType=VARCHAR},
+      store_path = #{storePath,jdbcType=VARCHAR},
+      create_id = #{createId,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+
+	<!-- 查询所有的函数 -->
+	<select id="selectAll" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from t_fun_def order by ord
+	</select>
+
+	<!-- 查询父节点下的所有子节点 -->
+	<select id="selectChildFunDef" parameterType="String" resultType="int">
+		select count(1) from t_fun_def where parent_id = #{id}
+	</select>
+
+
+	<!-- 删除类节点下的所有子节点 -->
+	<delete id="deleteChildFunDef" parameterType="String">
+		delete from t_fun_def where parent_id = #{id}
+	</delete>
+	
+	<!-- 查询出所有的指定dataType的函数 -->
+	<select id="selectByDataType" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from t_fun_def
+		where data_type = #{dataType,jdbcType=VARCHAR}
+	</select>
+	
+	<!-- 根据userId查询出所有的自定义函数 -->
+	<select id="selectByCreateId" parameterType="String" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from t_fun_def 
+		where create_id = #{createId,jdbcType=VARCHAR}
+	</select>
+</mapper>

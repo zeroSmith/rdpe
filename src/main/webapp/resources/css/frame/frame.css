@@ -1,0 +1,703 @@
+@CHARSET "UTF-8";
+html{
+	overflow:hidden;
+}
+body {
+    min-width: 900px;
+    overflow-y: hidden;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.frame-head {
+    height: 48px;
+    padding-left: 15px;
+    border-bottom: 1px solid #eee;
+    background-color: #fff;
+}
+
+.frame-head h1 {
+    float: left;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.frame-head h1 > a {
+    display: block;
+    height: 48px;
+    line-height: 48px;
+}
+
+.frame-head h1 > a:hover,
+.frame-head h1 > a:active,
+.frame-head h1 > a:visited,
+.frame-head h1 > a:LINK {
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 34px;
+    margin-right: 5px;
+    top: 7px;
+    position: relative;
+}
+
+.logo-title {
+    font-size: 18px;
+    color: #333;
+    position: relative;
+    top: 4px;
+    font-weight: bold;
+}
+
+.head-icons {
+    float: right;
+    width: auto;
+    padding: 4px 0;
+}
+
+.head-downlist {
+    display: none;
+}
+
+.icons-list {
+    float: left;
+    cursor: pointer;
+    position: relative;
+}
+
+.head-search {
+    overflow: hidden;
+    float: left;
+    width: 48px;
+    height: 30px;
+    padding: 5px 13px;
+    border-left: 1px solid #cacfd6;
+    border-right: 1px solid #cacfd6;
+    margin: 5px 3px 0 8px;
+}
+
+.search-hd-btn {
+    display: block;
+    float: right;
+}
+
+.head-search>a:focus {
+    text-decoration: none;
+}
+
+.search-hd-btn > .iconfont {
+    color: #b3bbc6;
+    font-size: 20px;
+}
+
+.head-search > .search-status {
+    overflow: hidden;
+    float: left;
+    position: absolute;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.search-filter {
+    text-align: center;
+    width: 50px;
+    float: left;
+}
+
+.search-val {
+    line-height: 15px;
+}
+
+.search-select {
+    left: 60px;
+    float: left;
+    transition: width .2s;
+}
+
+.search-select > input {
+    border-color: transparent;
+}
+
+#tabscon1 {
+    position: absolute;
+    z-index: 9999;
+    top: 300px;
+    background: #2b303b;
+    line-height: 34px;
+    width: 330px;
+    max-height: 258px;
+    right: 122px;
+    top: 48px;
+    color: #fff;
+    border: none;
+}
+.tipsScrollDiv{
+    max-height: 212px;
+    overflow-x:hidden; 
+}
+.onlineCount{
+	cursor:default;
+}
+.external {
+    display: block;
+    overflow: hidden;
+    padding: 15px;
+    background: #272c33;
+    text-align: left;
+}
+.external a {
+	color: #fff;
+}
+.external .more-notice {
+	float: right;
+}
+
+.dropdownTips-list>li:hover {
+    background: #363e46
+}
+
+.dropdownTips-list>li>a {
+    color: #aaafb7;
+    display: block;
+    clear: both;
+    font-weight: 300;
+    white-space: normal;
+    font-size: 13px;
+    padding: 8px 20px 10px 15px;
+    height: 35px;
+    text-shadow: none;
+    text-align: left;
+}
+
+.dropdownTips-list>li>a .time {
+    background: #23272d;
+    float: right;
+    max-width: 75px;
+    font-size: 11px;
+    font-weight: 400;
+    opacity: .7;
+    filter: alpha(opacity=70);
+    text-align: right;
+    padding: 1px 5px;
+}
+
+.dropdownTips-list>li a .details {
+    overflow: hidden;
+}
+
+.label.label-icon {
+    width: 8px;
+    margin-right: 8px;
+    text-align: center!important;
+}
+
+.label.label-sm {
+    font-size: 10px;
+    padding: 2px 4px;
+    top: -3px;
+    position: relative;
+}
+
+.details font {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 200px;
+    display: inline-block;
+}
+
+.label {
+    text-shadow: none!important;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 3px 6px;
+    color: #fff;
+    border-radius: 0;
+}
+
+.head-tips {
+    width: 35px;
+    height: 40px;
+    margin: 0 18px 0 10px;
+    text-align: center;
+}
+
+.head-tips-ctrl > img {
+    padding-top: 12px;
+}
+
+.tipsCount {
+    color: #fff;
+    width: 15px;
+    height: 15px;
+    text-align: left;
+    top: 5px;
+    position: absolute;
+    background: transparent url(../../img/frame/tipsBk.png) no-repeat center center;
+    line-height: 16px;
+    left: 16px;
+}
+
+.head-setting {
+    padding-right: 20px;
+    padding-top: 12px;
+}
+
+.head-personal {
+    position: relative;
+}
+
+.head-personal > img {
+    float: right;
+}
+
+.head-personal span {
+    position: absolute;
+    margin-top: 7px;
+    padding-right: 5px;
+    width: 32px;
+    height: 27px;
+    background: transparent url(../../img/frame/redPopBk.png) 0 center no-repeat;
+    text-align: center;
+    line-height: 27px;
+    color: #fff;
+}
+
+.head-user {
+    padding: 12px 17px 0 7px;
+    position: relative;
+}
+
+.head-user:after {
+    content: "";
+    border: 5px transparent solid;
+    border-top-color: #3c4250;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: 3px;
+}
+
+.head-user span {
+    font-size: 15px;
+}
+
+.head-downlist {
+    position: absolute;
+    right: 0;
+    top: 48px;
+    width: 100px;
+    border: 1px solid #eee;
+}
+
+.userInfo{
+	min-width:140px;
+	margin-top:-1px;
+}
+
+.nav>li>a.userInfo > .iconfont{
+	font-size:12px;
+}
+
+#userInfoDialog{
+	padding-top:5px;
+}
+
+#errorInfo{
+	color:red;
+	float:right;
+}
+
+.frame-content {
+    overflow: hidden;
+    min-width: 900px;
+}
+
+
+/* 左边一级菜单 */
+
+.l-content-wrapper {
+    width: 12%;
+    background-color: #2c3749;
+    float: left;
+    overflow: hidden;
+}
+
+
+/* 右边一级菜单 */
+
+.r-content-wrapper {
+    float: left;
+    width: 85%;
+    overflow: hidden;
+}
+
+.right-nav {
+    overflow: hidden;
+    width: 100%;
+}
+
+
+/*针对easyui的tab样式修改*/
+
+.tabs-header,
+.tabs-tool {
+    height: 34px;
+    background-color: transparent;
+    padding: 0;
+}
+
+.tabs li.tabs-selected a.tabs-inner,
+.tabs li a.tabs-inner,
+.tabs li.tabs-selected a.tabs-inner:hover,
+.tabs li a.tabs-inner:hover,
+.tabs-p-tool a:hover,
+.tabs li a.tabs-close:hover {
+    background: transparent;
+}
+
+.tabs-header,
+.tabs-scroller-left,
+.tabs-scroller-right,
+.tabs-tool,
+.tabs,
+.tabs-panels,
+.tabs li a.tabs-inner,
+.tabs li.tabs-selected a.tabs-inner,
+.tabs-header-bottom .tabs li.tabs-selected a.tabs-inner,
+.tabs-header-left .tabs li.tabs-selected a.tabs-inner,
+.tabs-header-right .tabs li.tabs-selected a.tabs-inner {
+    border: none;
+}
+
+.tabs li.tabs-selected {
+    border-top: 2px solid #e15b52;
+    border-left: 1px solid #eee;
+}
+.tabs-header-noborder{
+	border-bottom-color: #eee;
+    border-bottom-width: 1px;
+    border-bottom-style: inset;
+    background-color: #fff;
+}
+
+.tabs li {
+    border-left: 1px solid #eee;
+    height: 34px;
+    margin: 0;
+}
+
+.tabs li.tabs-last,
+.tabs li.tabs-selected.tabs-last {
+    border-right: 1px solid #eee;
+}
+
+.r-nav-list a {
+    display: block;
+    width: 100%;
+    height: 32px;
+    padding: 0 11px 2px 15px;
+    display: table-cell;
+    vertical-align: middle;
+    height: 34px;
+}
+
+.r-nav-list a:hover,
+.r-nav-list a:focus {
+    text-decoration: none;
+}
+
+.tabs-title {
+    position: relative;
+    top: 1px;
+    color: #666;
+    font-size: 14px;
+    line-height: 30px;
+}
+
+.tabs-selected .tabs-title {
+    color: #e15b52;
+}
+
+.r-nav-list.active a > span {
+    color: #e15b52;
+}
+
+.tabs .icon-refresh,
+.tabs .tabs-p-tool a.icon-refresh:hover {
+    background: transparent url("../../img/frame/refresh1.png") no-repeat scroll center center;
+    height: 18px;
+    opacity: 1;
+    position: relative;
+    width: 18px;
+}
+
+.tabs-first .tabs-p-tool {
+    float: right;
+    margin-top: 7px;
+    padding-right: 3px;
+    position: relative;
+    top: 0;
+}
+
+.tabs li.tabs-first a.tabs-inner {
+    padding-right: 1px;
+}
+
+.tabs-p-tool {
+    right: 25px;
+}
+
+.tabs li a.tabs-close,
+.tabs-p-tool {
+    height: auto;
+    top: 13px;
+}
+
+.tabs li a.tabs-close {
+    background: transparent url(../../img/frame/close.png) no-repeat center center;
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    top: 5px;
+    position: relative;
+}
+
+.tabs li a.tabs-close:hover {
+    background: transparent url(../../img/frame/closeHover.png) no-repeat center center;
+}
+
+.tabs-scroller-left,
+.tabs-scroller-right {
+    width: 24px;
+    height: 24px;
+    border: none;
+}
+
+.tabs-scroller-left {
+    background: transparent url('../../img/frame/frameCtlL.png') no-repeat center center;
+    background-size: 70% auto;
+}
+
+.tabs-scroller-right {
+    background: transparent url('../../img/frame/frameCtlR.png') no-repeat center center;
+    background-size: 70% auto;
+}
+
+.tabs-scroller-left:hover {
+    background: transparent url('../../img/frame/frameCtlLHover.png') no-repeat center center;
+    background-size: 70% auto;
+}
+
+.tabs-scroller-right:hover {
+    background: transparent url('../../img/frame/frameCtlRHover.png') no-repeat center center;
+    background-size: 70% auto;
+}
+
+
+/**解决ie下tab蓝色背景问题**/
+
+.tabs li a.tabs-inner {
+    filter: none;
+}
+
+.tabs li.tabs-selected a.tabs-inner {
+    filter: none;
+}
+
+
+/*定义1400分辨率以下左侧菜单的样式*/
+
+@media screen and (max-width: 1400px) {
+    /* 左边一级菜单 */
+    .l-content-wrapper {
+        width: 185px;;
+    }
+    #sideBarHead span {
+        width: auto;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .level2 .menuText {
+        max-width: 114px;
+    }
+    /* 右边 */
+    .r-content-wrapper {
+        float: left;
+        width: calc(100% - 185px);
+        width: -moz-calc(100% - 185px);
+        width: -webkit-calc(100% - 185px);
+    }
+}
+
+
+
+/**
+* 头部菜单
+**/
+.navbar-custom-menu{
+	float:right;
+}
+
+.navbar-nav {
+    max-height: 48px;
+}
+
+.nav {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    box-sizing: border-box;
+    display:block;
+}
+
+.navbar-nav>li {
+    position: relative;
+    float: left;
+    display:block;
+    list-style: none;
+}
+
+
+.nav>li>a {
+    /* border-left: 1px solid #eee;
+    border-right-width: 0; */
+    color: #111;
+    padding-top: 18px;
+    padding-bottom: 11px;
+    position: relative;
+    display: block;
+    background-color: transparent;
+    list-style: none;
+}
+
+.nav>li>a:HOVER{
+	color:#999;
+	background:none;
+}
+
+.nav>li>a:VISITED{
+	background:none;
+}
+
+.nav>li>a:LINK{
+	background:none;
+}
+
+.nav>li>a>.iconfont{
+	font-size:16px;
+}
+
+.nav>li>a>.label {
+    position: absolute;
+    top: 9px;
+    right: 6px;
+    text-align: center;
+    font-size: 9px;
+    padding: 3px 5px;
+    border-radius: 241px;
+    line-height: .9;
+}
+
+.hidden-xs{
+	font-size:13px;
+}
+
+.user-image {
+    float: left;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-right: 6px;
+    margin-top: -5px;
+    max-width: none;
+    vertical-align: middle;
+    border:0;
+}
+
+
+.downInfo:after{
+	left: auto;
+    right: 15px;
+    border-bottom: 6px solid #2e343b;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    top: -5px;
+    content: "";
+    display: inline-block;
+    position: absolute;
+}
+
+
+
+.user-drow{
+    position: absolute;
+    width: 130px;
+    z-index: 9999;
+    padding: 0 5px;
+    font-size: 13px;
+    left: 92px;
+}
+
+
+.dropdownTips {
+    display: none;
+    border: 0;
+}
+
+.dropdownTips-list {
+    background: #2e343b;
+}
+.dropdownTips-list font{
+    font-size: 13px;
+}
+.dropdownTips-list span{
+    font-size: 13px;
+}
+
+/**
+*我的信息样式表
+**/
+.profile-user-img {
+    margin: 0 auto;
+    width: 50px;
+    padding: 3px;
+    border: 3px solid #e15b52;
+}
+
+.profile-username {
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.text-muted{
+	text-align: right;
+}
+
+#userInfoDialog i.iconfont {
+    color: #71b91b;
+}
+
+.form-group{
+	over-flow:hidden;
+}
+
+#updatePasswd .form-group label {
+    width: 70px;
+}
+
+#updatePasswd .input-sm{
+	width:180px;
+}
+
+#level {
+    float: none;
+    display: block;
+    left: 70px;
+}

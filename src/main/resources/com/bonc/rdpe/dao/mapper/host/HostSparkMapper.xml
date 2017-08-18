@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bonc.rdpe.entity.HostSpark">
+	<resultMap id="BaseResultMap" type="com.bonc.rdpe.entity.HostSpark">
+		<id column="id" property="id" jdbcType="VARCHAR" />
+		<result column="host_ip" property="hostIp" jdbcType="VARCHAR" />
+		<result column="host_name" property="hostName" jdbcType="VARCHAR" />
+		<result column="host_type" property="hostType" jdbcType="VARCHAR" />
+		<result column="host_username" property="hostUsername"
+			jdbcType="VARCHAR" />
+		<result column="host_password" property="hostPassword"
+			jdbcType="VARCHAR" />
+		<result column="ssh_port" property="sshPort" jdbcType="VARCHAR" />
+		<result column="spark_version" property="sparkVersion"
+			jdbcType="VARCHAR" />
+		<result column="install_path" property="installPath" jdbcType="VARCHAR" />
+		<result column="creater_id" property="createrId" jdbcType="VARCHAR" />
+		<result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+		<result column="org_id" property="orgId" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, host_ip, host_name, host_type, host_username, host_password,
+		ssh_port, spark_version,
+		install_path, creater_id, create_time, org_id
+	</sql>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		select
+		<include refid="Base_Column_List" />
+		from t_host_spark
+		where id = #{id,jdbcType=VARCHAR}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+		delete from t_host_spark
+		where id = #{id,jdbcType=VARCHAR}
+	</delete>
+	<insert id="insert" parameterType="com.bonc.rdpe.entity.HostSpark">
+		insert into t_host_spark (id, host_ip, host_name,
+		host_type, host_username, host_password,
+		ssh_port, spark_version, install_path,
+		creater_id, create_time, org_id
+		)
+		values (#{id,jdbcType=VARCHAR}, #{hostIp,jdbcType=VARCHAR},
+		#{hostName,jdbcType=VARCHAR},
+		#{hostType,jdbcType=VARCHAR}, #{hostUsername,jdbcType=VARCHAR}, #{hostPassword,jdbcType=VARCHAR},
+		#{sshPort,jdbcType=VARCHAR}, #{sparkVersion,jdbcType=VARCHAR},
+		#{installPath,jdbcType=VARCHAR},
+		#{createrId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{orgId,jdbcType=VARCHAR}
+		)
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="com.bonc.rdpe.entity.HostSpark">
+		update t_host_spark
+		<set>
+			<if test="hostIp != null">
+				host_ip = #{hostIp,jdbcType=VARCHAR},
+			</if>
+			<if test="hostName != null">
+				host_name = #{hostName,jdbcType=VARCHAR},
+			</if>
+			<if test="hostType != null">
+				host_type = #{hostType,jdbcType=VARCHAR},
+			</if>
+			<if test="hostUsername != null">
+				host_username = #{hostUsername,jdbcType=VARCHAR},
+			</if>
+			<if test="hostPassword != null">
+				host_password = #{hostPassword,jdbcType=VARCHAR},
+			</if>
+			<if test="sshPort != null">
+				ssh_port = #{sshPort,jdbcType=VARCHAR},
+			</if>
+			<if test="sparkVersion != null">
+				spark_version = #{sparkVersion,jdbcType=VARCHAR},
+			</if>
+			<if test="installPath != null">
+				install_path = #{installPath,jdbcType=VARCHAR},
+			</if>
+			<if test="createrId != null">
+				creater_id = #{createrId,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				create_time = #{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="orgId != null">
+				org_id = #{orgId,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where id = #{id,jdbcType=VARCHAR}
+	</update>
+
+	<!-- -->
+	<select id="selectAllByCondition" resultMap="BaseResultMap"
+		parameterType="Map">
+		select
+		<include refid="Base_Column_List" />
+		from t_host_spark
+		where 1 = 1
+		<if test="hostIp != null and hostIp != ''">
+			and host_ip like '%${hostIp}%'
+		</if>
+		<if test="hostName != null and hostName != ''">
+			and host_name like '%${hostName}%'
+		</if>
+		<if test="createrId != null">
+			and creater_id = #{createrId,jdbcType=VARCHAR}
+		</if>
+	</select>
+
+	<select id="getMasterHosts" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		select
+		<include refid="Base_Column_List" />
+		from t_host_spark
+		where creater_id = #{createrId,jdbcType=VARCHAR}
+	</select>
+
+</mapper>

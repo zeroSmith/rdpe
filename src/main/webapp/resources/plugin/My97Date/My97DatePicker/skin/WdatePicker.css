@@ -1,0 +1,15 @@
+.Wdate{
+	border:#999 1px solid;
+	height:20px;
+	background:#fff url(calander.png) no-repeat right;
+	background-position: 95% center;
+}
+.Wdate::-ms-clear{display:none;}
+
+.WdateFmtErr{
+	font-weight:bold;
+	color:red;
+}
+tr.MTitle >td>div:nth-child(1){
+	display: none;
+}

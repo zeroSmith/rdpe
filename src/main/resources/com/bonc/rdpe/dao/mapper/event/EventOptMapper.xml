@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bonc.rdpe.entity.EventOpt">
+	<resultMap id="BaseResultMap" type="com.bonc.rdpe.entity.EventOpt">
+		<id column="opt_id" jdbcType="VARCHAR" property="optId" />
+		<id column="event_id" jdbcType="VARCHAR" property="eventId" />
+		<result column="opt_type" jdbcType="VARCHAR" property="optType" />
+		<result column="process_type" property="processType" jdbcType="VARCHAR" />
+		<result column="opt_def_md5" jdbcType="VARCHAR" property="optDefMd5" />
+		<result column="create_id" jdbcType="VARCHAR" property="createId" />
+		<result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+		<result column="opt_def" jdbcType="LONGVARCHAR" property="optDef" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		opt_id, event_id, opt_type, process_type, opt_def_md5, create_id, create_time, opt_def
+	</sql>
+	<select id="selectByPrimaryKey" parameterType="com.bonc.rdpe.entity.EventOptKey" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from t_event_opt
+		where opt_id = #{optId,jdbcType=VARCHAR}
+		and event_id = #{eventId,jdbcType=VARCHAR}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="com.bonc.rdpe.entity.EventOptKey">
+		delete from t_event_opt where opt_id = #{optId,jdbcType=VARCHAR} and event_id = #{eventId,jdbcType=VARCHAR}
+	</delete>
+	<insert id="insert" parameterType="com.bonc.rdpe.entity.EventOpt">
+		insert into t_event_opt
+		(opt_id,event_id, opt_type,process_type,opt_def_md5, create_id, create_time,opt_def)
+		values(#{optId,jdbcType=VARCHAR}, #{eventId,jdbcType=VARCHAR},#{optType,jdbcType=VARCHAR},#{processType,jdbcType=VARCHAR},
+		#{optDefMd5,jdbcType=VARCHAR},#{createId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP},#{optDef,jdbcType=LONGVARCHAR}
+		)
+	</insert>
+	
+	<update id="updateByPrimaryKeySelective" parameterType="com.bonc.rdpe.entity.EventOpt">
+		update t_event_opt
+		<set>
+			<if test="optType != null">
+				opt_type = #{optType,jdbcType=VARCHAR},
+			</if>
+			<if test="processType != null" >
+		        process_type = #{processType,jdbcType=VARCHAR},
+		    </if>
+			<if test="optDefMd5 != null">
+				opt_def_md5 = #{optDefMd5,jdbcType=VARCHAR},
+			</if>
+			<if test="createId != null">
+				create_id = #{createId,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				create_time = #{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="optDef != null">
+				opt_def = #{optDef,jdbcType=LONGVARCHAR},
+			</if>
+		</set>
+		where opt_id = #{optId,jdbcType=VARCHAR}
+		and event_id = #{eventId,jdbcType=VARCHAR}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="com.bonc.rdpe.entity.EventOpt">
+		update t_event_opt
+		set opt_type = #{optType,jdbcType=VARCHAR},
+		process_type = #{processType,jdbcType=VARCHAR},
+		opt_def_md5 = #{optDefMd5,jdbcType=VARCHAR},
+		create_id = #{createId,jdbcType=VARCHAR},
+		create_time = #{createTime,jdbcType=TIMESTAMP},
+		opt_def = #{optDef,jdbcType=LONGVARCHAR}
+		where opt_id = #{optId,jdbcType=VARCHAR}
+		and event_id = #{eventId,jdbcType=VARCHAR}
+	</update>
+	<!-- 根据事件id查询出表中的信息 -->
+	<select id="selectByEventId" parameterType="java.lang.String" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from t_event_opt
+		where event_id = #{eventId,jdbcType=VARCHAR}
+	</select>
+	
+	<delete id="deleteByEventId" parameterType="java.lang.String">
+		delete from t_event_opt where event_id = #{eventId,jdbcType=VARCHAR}
+	</delete>
+</mapper>

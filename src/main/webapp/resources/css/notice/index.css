@@ -1,0 +1,348 @@
+p {
+    margin: 0;
+}
+
+html {
+    background-color: #eceff4;
+}
+
+body{
+	overflow:hidden;
+}
+
+.content {
+    margin: 10px;
+    overflow: hidden;
+}
+
+.content > .panel{
+    margin-bottom: 0;
+}
+
+.content > div {
+    float: left;
+}
+
+.l-content-wrapper {
+    width: 210px;
+}
+
+.r-content-wrapper {
+    margin-left: 10px;
+}
+
+.title {
+    background-color: #e15b52;
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 2px;
+    margin-bottom: 4px;
+}
+
+.title > p {
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.noticeLogo {
+    background: #e15b52 url('../../img/notice/notice.png') no-repeat 55px center;
+}
+
+.partTab {
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+.partTab > a {
+    width: 100%;
+    display: block;
+    padding: 7px 0 7px 17px;
+    overflow: hidden;
+    border-left: 3px solid #fff;
+}
+
+.partTab > a > * {
+    float: left;
+    display: block;
+}
+
+.partTab > a >i {
+    margin-right: 5px;
+    color: #939393;
+    font-size: 17px;
+}
+.partTab > a >i.draft{
+	font-size:18px;
+	top: -3px;
+    position: relative;
+}
+.partTab > a > span {
+    top: 2px;
+    position: relative;
+    color: #666;
+}
+
+.receiveLink {
+    border-color: #ddd;
+    border-width: 1px 0;
+    border-style: solid;
+}
+
+.partIcon {
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+}
+
+.partTab > .active,
+.partTab > a:hover {
+    background-color: #f7f6f6;
+    border-left: 3px solid #e15b52;
+}
+
+.noticeOrg {
+    width: 20px;
+    height: 18px;
+    display: inline-block;
+    background: transparent url('../../img/notice/noticeOrg.png') no-repeat center center;
+    top: 2px;
+    position: relative;
+}
+
+.panel-body {
+    padding: 0;
+}
+
+.panel-heading > span {
+    font-size: 14px;
+    top: -3px;
+    position: relative;
+    margin-left: 7px;
+}
+
+.panel-default >.panel-heading {
+    border-top: 2px solid #e15b52;
+    border-radius: 0;
+}
+
+.panel-default {
+    border: none;
+}
+
+.markReaded {
+    background: #e15b52 url('../../img/notice/mark.png') no-repeat 8px center;
+    float: right;
+}
+
+.multiDel {
+    background: #e15b52 url('../../img/notice/delWhite.png') no-repeat 6px center;
+    float: right;
+    margin-right: 6px;
+}
+
+.drafts-wrap .multiDel {
+    margin-right: 0;
+}
+
+.newNotice {
+    background: #e15b52 url('../../img/notice/newNotice.png') no-repeat 6px center;
+    float: right;
+}
+
+.tblOperation {
+    padding: 8px 16px;
+    border-bottom: 1px solid #ddd;
+    overflow: hidden;
+}
+
+input.checkAll {
+    top: 6px;
+    position: relative;
+}
+
+/*公共表格样式*/
+
+table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+table a,
+table td {
+    color: #474747;
+}
+
+table a:hover, table a:active, table a:focus{
+	text-decoration: underline;
+}
+
+tbody,
+thead {
+    width: 100%;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+    height: 36px;
+}
+
+table td {
+    padding: 6px 0;
+}
+
+table td > i {
+    color: #8c8c8c;
+}
+
+.dataTables_wrapper .dataTable tbody tr > td{
+	padding: 0;
+}
+
+table tr > td:first-child,.dataTables_wrapper .dataTable tbody tr > td:first-child{
+    padding: 0 0 0 16px;
+}
+
+.dataTables_wrapper .dataTable tbody tr > td:last-child {
+    padding-right: 16px;
+}
+
+table tr:nth-child(odd), table.dataTable tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+tr.odd {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f3f3f3;
+}
+
+#noticeList tr > td+td+td+td > i {
+    cursor: pointer;
+}
+
+#noticeList tr > td+td+td+td > i:hover,
+#noticeList tr > td+td+td+td > i:active,
+#noticeList tr > td+td+td+td > i:focus {
+    color: #d9534f;
+}
+
+
+/*已接收表格样式*/
+
+table.dataTable td > i.hasRead {
+    color: #ff9f9f;
+    font-size: 16px;
+}
+
+table.dataTable td > i.unRead {
+    color:#f7d747;
+}
+
+.unReadSubject {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.delOneNotice {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    text-align: center;
+    top: 2px;
+    position: relative;
+    cursor: pointer;
+}
+
+#noticeList thead {
+    display: none;
+}
+
+#noticeList tr > td:first-child {
+    width:15px;
+    text-align: left;
+}
+#noticeList tr > td:first-child+td {
+    width: 25px;
+    text-align: center;
+}
+
+#noticeList tr > td+td+td {
+    width: 63%;
+    width: -moz-calc(60% - 40px);
+    width: -webkit-calc(60% - 40px);
+    width: calc(60% - 40px);
+    text-align: left;
+}
+
+#noticeList tr > td+td+td+td {
+    width: 20%;
+    text-align: center;
+}
+
+#noticeList tr > td+td+td+td+td {
+    width: 10%;
+    text-align: right;
+}
+
+.dataTables_wrapper .dataTable TBODY TR > TD + TD + TD + TD + TD + TD {
+    width: 10%;
+    text-align: right;
+    padding:0 16px 0 0;
+}
+
+/*已发送表格样式*/
+
+table.dataTable td > i.hasSend {
+    xbackground: transparent url('../../img/notice/sendSuccess.png') no-repeat center center;
+    color: #09bb07;
+}
+
+table.dataTable td > i.unSend {
+    xbackground: transparent url('../../img/notice/sendFilure.png') no-repeat center center;
+    color:#e15b52;
+}
+
+.editNotice {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.resend {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-left: 8px;
+}
+
+#noticeList.sendList tr > td+td+td+td {
+    width: 25%;
+    text-align: right;
+}
+
+
+/*草稿表格样式*/
+
+table td > i.draftState {
+    color: #949494;
+}
+
+/*合并样式*/
+.sended-wrap,.drafts-wrap{
+	display:none;
+}
+
+#noticeList tr > td.dataTables_empty{
+	width:100%;
+	text-align: center;
+	padding: 8px;
+	line-height: 36px;
+}
+.tblOperation{
+	display:none;
+}

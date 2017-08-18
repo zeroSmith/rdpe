@@ -1,0 +1,154 @@
+@basicBk: #2c3749;
+#leftBar {
+    background-color: @basicBk;
+    height: 100%;
+    max-width: 185px;
+}
+
+#sideBarHead {
+    height: 35px;
+    border-left: 3px solid #ff7062;
+}
+
+.lBarCtrl {
+    border-bottom: 1px solid #3d4757;
+    background-color: @basicBk;
+    height: 35px;
+}
+
+#sideBarHead span,
+.menu-text {
+    color: #fff;
+    font-size: 14px;
+    width: 108px;
+    display: inline-block;
+    position: relative;
+    top: -12px;
+}
+
+.sIcon {
+    width: 34px;
+    margin-right: 3px;
+    height: 36px;
+    display: inline-block;
+}
+
+.bonc-nav {
+    background-color: @basicBk;
+}
+
+.bonc-nav a {
+    display: block;
+    overflow: hidden;
+    height: 36px;
+}
+
+.arrow {
+    display: none;
+}
+
+.closeArrow {
+    background: transparent url(../../img/frame/close-arrow.png) no-repeat center center;
+}
+
+.openArrow {
+    background: transparent url(../../img/frame/open-arrow.png) no-repeat center center;
+}
+
+.closeArrow,
+.openArrow {
+    display: block;
+    float: right;
+}
+
+.funIcon {
+    background: transparent url(../../img/frame/menu.png) no-repeat center center;
+}
+
+.toggleIcon {
+    background: transparent url(../../img/frame/toggleLeftBar.png) no-repeat center center;
+    cursor: pointer;
+}
+
+.nav1 {
+    background: transparent url(../../img/frame/workbench.png) no-repeat center center;
+}
+
+.nav2 {
+    background: transparent url(../../img/frame/order.png) no-repeat center center;
+}
+
+.nav3 {
+    background: transparent url(../../img/frame/finance.png) no-repeat center center;
+}
+
+.nav4 {
+    background: transparent url(../../img/frame/reportForm.png) no-repeat center center;
+}
+
+.submenu {
+    display: none;
+    background-color: #3a485e;
+    width: 182px;
+}
+
+.simpleLBar .funIcon,
+.simpleLBar #sideBarHead span,
+.simpleLBar .menu-text,
+.simpleLBar .submenu {
+    display: none;
+}
+.simpleLBar .level0 > a > .menu-text{
+	position:absolute;
+	left: 37px;
+    width: 185px;
+    background-color:#F2F2F2;
+    height: 36px;
+    text-align: center;
+    line-height: 36px;
+    color: #393939;
+    z-index: 9999;
+}
+.simpleLBar .hoverShow .menu-text {
+    display: inline-block;
+}
+
+.level1 > a:hover, .level1.open > a{
+	background-color:#2c3749;
+}
+.hoverShow {
+    position: absolute;
+    left: 37px;
+    width: 185px;
+    background-color:#F2F2F2;
+    z-index: 9999;
+}
+
+.hoverShow .menu-text{
+	color:#393939;
+}
+.hoverShow .closeArrow {
+    background: transparent url(../../img/frame/close-arrow-gray.png) no-repeat center center;
+}
+
+.hoverShow .openArrow {
+    background: transparent url(../../img/frame/open-arrow-gray.png) no-repeat center center;
+}
+.hoverShow .submenu{
+	background-color:#f2f2f2;
+	width: 185px;
+	z-index: 9999;
+}
+.hoverShow .level1 > a:hover, .hoverShow .level1.open > a{
+	background-color:transparent;
+}
+.hoverShow .level1{
+	background-color:#ececec;
+}
+.hoverShow .level2{
+	background-color:#e5e5e5;
+}
+
+.hoverShow a{
+	xborder-bottom: 1px solid #e5e5e5;
+}

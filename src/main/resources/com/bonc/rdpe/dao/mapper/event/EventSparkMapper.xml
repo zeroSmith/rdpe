@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bonc.rdpe.entity.EventSpark">
+	<resultMap id="BaseResultMap" type="com.bonc.rdpe.entity.EventSpark">
+		<id column="id" property="id" jdbcType="VARCHAR" />
+		<result column="event_en_name" property="eventEnName" jdbcType="VARCHAR" />
+		<result column="event_cn_name" property="eventCnName" jdbcType="VARCHAR" />
+		<result column="event_type" property="eventType" jdbcType="VARCHAR" />
+		<result column="submit_host_id" property="submitHostId"
+			jdbcType="VARCHAR" />
+		<result column="external_main_class" property="externalMainClass"
+			jdbcType="VARCHAR" />
+		<result column="upload_jar_path" property="uploadJarPath"
+			jdbcType="VARCHAR" />
+		<result column="publish_jar_path" property="publishJarPath"
+			jdbcType="VARCHAR" />
+		<result column="has_generator_code" property="hasGeneratorCode"
+			jdbcType="VARCHAR" />
+		<result column="has_run" property="hasRun" jdbcType="VARCHAR" />
+		<result column="create_id" property="createId" jdbcType="VARCHAR" />
+		<result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+		<result column="flow_def" property="flowDef" jdbcType="LONGVARCHAR" />
+		<result column="execute_def" property="executeDef" jdbcType="LONGVARCHAR" />
+		<result column="application_id" property="applicationId" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, event_en_name, event_cn_name, event_type,
+		submit_host_id, flow_def, flow_def_md5,execute_def,
+		external_main_class, upload_jar_path, publish_jar_path,
+		gen_code_status, run_status, create_id,
+		create_time, application_id
+	</sql>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		select
+		<include refid="Base_Column_List" />
+		from t_event_spark
+		where id = #{id,jdbcType=VARCHAR}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+		delete from
+		t_event_spark
+		where id = #{id,jdbcType=VARCHAR}
+	</delete>
+	<insert id="insert" parameterType="com.bonc.rdpe.entity.EventSpark">
+		insert into t_event_spark
+		(event_en_name, id, event_cn_name,
+		event_type, submit_host_id,
+		flow_def_md5,
+		external_main_class, upload_jar_path, publish_jar_path,
+		gen_code_status, run_status, create_id,
+		create_time, application_id,flow_def,
+		execute_def
+		)
+		values (#{eventEnName,jdbcType=VARCHAR},
+		#{id,jdbcType=VARCHAR},
+		#{eventCnName,jdbcType=VARCHAR},
+		#{eventType,jdbcType=VARCHAR}, #{submitHostId,jdbcType=VARCHAR},
+		#{flowDefMd5,jdbcType=VARCHAR},
+		#{externalMainClass,jdbcType=VARCHAR},
+		#{uploadJarPath,jdbcType=VARCHAR},
+		#{publishJarPath,jdbcType=VARCHAR},
+		#{genCodeStatus,jdbcType=VARCHAR}, #{runStatus,jdbcType=VARCHAR},
+		#{createId,jdbcType=VARCHAR},
+		#{createTime,jdbcType=TIMESTAMP}, #{applicationId,jdbcType=VARCHAR},
+		#{flowDef,jdbcType=LONGVARCHAR},
+		#{executeDef,jdbcType=LONGVARCHAR}
+		)
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="com.bonc.rdpe.entity.EventSpark">
+		update t_event_spark
+		<set>
+			<if test="eventEnName != null">
+				event_en_name = #{eventEnName,jdbcType=VARCHAR},
+			</if>
+			<if test="eventCnName != null">
+				event_cn_name = #{eventCnName,jdbcType=VARCHAR},
+			</if>
+			<if test="eventType != null">
+				event_type = #{eventType,jdbcType=VARCHAR},
+			</if>
+			<if test="submitHostId != null">
+				submit_host_id = #{submitHostId,jdbcType=VARCHAR},
+			</if>
+			<if test="flowDefMd5 != null">
+				flow_def_md5 = #{flowDefMd5,jdbcType=VARCHAR},
+			</if>
+			<if test="externalMainClass != null">
+				external_main_class =
+				#{externalMainClass,jdbcType=VARCHAR},
+			</if>
+			<if test="uploadJarPath != null">
+				upload_jar_path = #{uploadJarPath,jdbcType=VARCHAR},
+			</if>
+			<if test="publishJarPath != null">
+				publish_jar_path = #{publishJarPath,jdbcType=VARCHAR},
+			</if>
+			<if test="genCodeStatus != null">
+				gen_code_status = #{genCodeStatus,jdbcType=VARCHAR},
+			</if>
+			<if test="runStatus != null">
+				run_status = #{runStatus,jdbcType=VARCHAR},
+			</if>
+			<if test="createId != null">
+				create_id = #{createId,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				create_time = #{createTime,jdbcType=TIMESTAMP},
+			</if>
+			 <if test="applicationId != null" >
+		        application_id = #{applicationId,jdbcType=VARCHAR},
+		     </if>
+			<if test="flowDef != null">
+				flow_def = #{flowDef,jdbcType=LONGVARCHAR},
+			</if>
+			<if test="executeDef != null">
+				execute_def = #{executeDef,jdbcType=LONGVARCHAR},
+			</if>
+		</set>
+		where id = #{id,jdbcType=VARCHAR}
+	</update>
+
+	<!-- -->
+
+	<sql id="Base_Column_List_vo">
+		t_event_spark.id as id, event_en_name, event_cn_name,
+		event_type,submit_host_id,external_main_class, upload_jar_path,
+		publish_jar_path,gen_code_status, run_status,t_event_spark.create_id, t_event_spark.create_time, application_id
+	</sql>
+	<resultMap id="ResultMapVO" type="com.bonc.rdpe.entity.EventSparkVO"
+		extends="BaseResultMap">
+		<result column="host_ip" property="hostIp" jdbcType="VARCHAR" />
+	</resultMap>
+
+
+	<select id="selectAllByCondition" parameterType="map" resultMap="ResultMapVO">
+		select
+		<include refid="Base_Column_List_vo" />
+		, host_ip
+		from t_event_spark , t_host_spark
+		where 1 = 1
+		<if test="createId != null and createId != ''">
+			and create_id = #{createId,jdbcType=VARCHAR}
+		</if>
+		<if test="eventCnName != null and eventCnName != ''">
+			and event_cn_name LIKE '%${eventCnName}%'
+		</if>
+		<if test="eventType != null and eventType != ''">
+			and event_type = #{eventType,jdbcType=VARCHAR}
+		</if>
+		and t_event_spark.submit_host_id = t_host_spark.id
+	</select>
+	
+	<select id="selectAll" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from t_event_spark 
+	</select>
+
+</mapper>

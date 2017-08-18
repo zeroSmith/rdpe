@@ -1,0 +1,667 @@
+/* 清除默认样式 */
+
+/*字体的unicode：黑体 \9ED1\4F53; 宋体 \5B8B\4F53 ; 楷体 \6977\4F53; 微软雅黑 \5FAE\8F6F\96C5\9ED1*/
+@font-face {
+	font-family: "iconfont";
+    src: url('../plugin/iconFront/iconfont.eot'); /* IE9*/
+    src: url('../plugin/iconFront/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../plugin/iconFront/iconfont.woff') format('woff'), /* chrome, firefox */
+    url('../plugin/iconFront/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('../plugin/iconFront/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+hr{
+	margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: 12px Microsoft YaHei, Helvetica Neue, Helvetica, PingFang SC, \5FAE\8F6F\96C5\9ED1, \5B8B\4F53, Tahoma, Arial, sans-serif;
+}
+
+html {
+    border: 0;
+    background-color: #eceff4;
+}
+
+body {
+    border: 0;
+    color: #333;
+    background: transparent;
+    position: relative;
+    font-size:13px;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+ul,
+ol,
+li,
+dl,
+dt,
+dd {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 有时不生效，需要再次清除margin和padding */
+
+li,
+dt,
+dd {
+    list-style: none;
+}
+
+a {
+	color: #333;
+    text-decoration: none;
+}
+
+a:focus {
+    outline: none;
+    color: #f64241;
+}
+a:link, a:visited, a:hover, a:active {
+	text-decoration: none;
+}
+a:hover{
+	color: #f64241;
+}
+
+
+
+/* IE下点击a标签去掉虚线边框 */
+
+img {
+    vertical-align: top;
+}
+
+input,
+button {
+    outline: none;
+}
+
+/* 浮动 */
+
+.clearfix:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+
+/* ----------------------------------------------------------------- */
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:14px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dialog-wrap{
+	padding:20px;
+	padding-top:15px;
+	display:none;
+}
+
+.form-control {
+    display: inline-block;
+    width: auto;
+    color: #555;
+    padding:0px 12px;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+
+.form-control:focus {
+    border-color: #ccc;
+    box-shadow: none;
+}
+
+.text-label {
+	line-height: 80px;
+	vertical-align: top;
+}
+
+.row, 
+.row-tab,
+.panel-default {
+	height: 100%;
+}
+.panel-default {
+	border-radius: 0;
+	border: none;
+	box-shadow: rgba(0,0,0,0) 0 0 0;
+}
+.panel-default > .panel-heading {
+    color: #333;
+    background-color: #fff;
+    border-color: #eee;
+    border-top: 3px solid #e15b52;
+}
+.panel-heading{
+	height:45px;
+	padding: 10px 10px;
+    border-bottom: 1px solid transparent;
+	border-radius: 0;
+    font-size:14px;
+}
+.panel-heading span{
+	font-size:14px;
+}
+.panel-heading > i.iconfont {
+    color: #f26223;
+}
+.panel-heading > i.iconfont:first-child {
+    margin-right:7px;
+    font-size: 16px;
+}
+.panel-body{
+	padding:20px 10px;
+	overflow: hidden;
+	min-height:500px;
+}
+
+.panel-r {
+	margin-left: -20px;
+	padding-right: 0;
+}
+
+
+.input-sm{
+	height:26px;
+	line-height: 125%;
+	width:100%;
+}
+
+.form-inline>.form-group {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+    margin-right: 20px;
+}
+/* 下拉框 */
+.input-select {
+	position: relative;
+    display: inline-block;
+    height: 26px;
+}
+.select-btn {
+    position: absolute;
+    right: 2px;
+    top: 50%;
+    margin-top: -11px;
+    width: 24px;
+    height: 22px;
+    background: #dcdcdc;
+    border: 1px solid #c9c9c9;
+    cursor: pointer;
+}
+.select-btn:after {
+    content: "";
+    border: 6px transparent solid;
+    border-top-color: #a0a0a0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -6px;
+    margin-top: -3px;
+}
+/* 树状菜单 */
+.menu-content {
+	display: none;
+    position: absolute;
+    left: 0 !important;
+    top: 30px !important;
+/*     width: 100%; */
+    height: 300px;
+    border: 1px solid #ccc;
+    background: #fff;
+    z-index: 9;
+}
+
+
+.btn-xs, .btn-group-xs > .btn {
+    padding: 1px 5px;
+    font-size: 13px;
+    line-height: 1.5;
+    border-radius: 3px;
+    text-align: center;
+}
+
+td .btn-xs, td .btn-group-xs > .btn {
+	background-color:transparent;
+}
+td .btn-xs:visited, td .btn-xs:hover, td .btn-xs:focus, td .btn-xs:active{
+	background-color:transparent;
+}
+td .btn-xs > .iconfont{
+	font-size:15px;
+}
+.btn-xs > .iconfont{
+    font-size: 12px;
+}
+.btn-md {
+	padding: 4px 16px;
+	font-size: 14px;
+}
+.btn-red {
+    background: #ed5b56;
+    color: #fff;
+}
+.btn.btn-red:hover, .btn.btn-red:focus, .btn.btn-red.focus{
+	color:#fff;
+}
+
+.btn-gray {
+    background: #c0c0c0;
+    color: #fff;
+}
+
+/* 单选框 */
+.radio {
+	display: inline-block;
+	text-decoration: none;
+}
+.radio label {
+    color: #333;
+    padding: 0;
+    margin-left: 5px;
+    margin-right:5px;
+}
+.radio i {
+    display: inline-block;
+    position:relative;    
+}
+.radio .radio-img {
+	top:3px;
+	width: 16px;
+    height: 16px;
+    background: url(../img/commonSprites.png) -4px -3px;
+}
+.radio.active .radio-img {
+    background-position: -4px -26px;
+}
+.radio-l {
+    margin-right: 20px;
+}
+
+/* 类似单选框 */
+.circle-checkbox {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: url(../img/commonSprites.png) -67px -25px;
+}
+.circle-checkbox.active {
+    background-position: -68px -52px;
+}
+/* 复选框 */
+.checkbox {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: url(../img/commonSprites.png) -38px -3px;
+}
+.checkbox.active {
+    background-position: -38px -26px;
+}
+
+.redBorderCheckbox{
+	float:left;
+	width:16px;
+	height:16px;
+	background:url(../../img/login/loginSprites.png) -2px -2px;
+	margin-right:5px;
+}
+.redBorderCheckbox.active {
+	background-position:-2px -22px;
+}
+}
+/* 上传文件 */
+.picker {
+	margin-right: 10px;
+}
+.webuploader-container .webuploader-pick {
+	background-color: #e15b52;
+    color: #fff;
+    border: 1px solid #d43f3a;
+    border-radius: 2px;
+    padding: 4px 6px;
+    height: 26px;
+}
+.webuploader-pick .iconfont {
+	margin-right: 3px;
+}
+
+
+.searchWrap{
+	float:left;
+	padding-left:15px;
+	margin-bottom: 30px;
+}
+
+.ztree *{
+	font-family: Microsoft YaHei;
+}
+
+.icon-tip{
+	cursor:pointer;
+	display: block;
+	color:#e15b52;
+	font-size:16px;
+}
+
+.form-table{
+	width:100%;
+	height:100%;
+}
+
+.form-table >tbody> tr{
+	height:40px;
+}
+
+label {
+    font-weight: normal;
+}
+
+/*按钮公共样式*/
+/*红色背景深红边框的button, 如公告管理页的多选删除按钮*/
+.b-redBtn {
+    background-color: #e15b52;
+    color: #fff;
+    border: 1px solid #d43f3a;
+    border-radius: 2px;
+    padding: 4px 6px 4px 25px;
+    height: 26px;
+}
+.b-redBtn:hover, .b-redBtn:focus,.b-redBtn:active {
+    background-color: #c73c37;
+}
+.btn-i{
+	padding: 4px 6px;
+}
+.btn-i > i{
+	margin-right: 4px;
+    font-size: 13px;
+}
+.b-delBtn{
+	background: #e15b52 url(../img/notice/delWhite.png) no-repeat 6px center;
+}
+/* 日历框---jquery-ui插件 */
+.ui-state-default, 
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default, 
+.ui-button, 
+html .ui-button.ui-state-disabled:hover, 
+html .ui-button.ui-state-disabled:active {
+    background: #e9e9e9;
+}
+.ui-state-highlight, 
+.ui-widget-content .ui-state-highlight, 
+.ui-widget-header .ui-state-highlight,
+.ui-state-active, 
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active, 
+a.ui-button:active, 
+.ui-button:active, 
+.ui-button.ui-state-active:hover {
+    border-color: #aaa;
+    background: #fefefe;
+    color: #323232;
+}
+
+/***datatable的样式改造*/
+.dataTables_wrapper .dataTable {
+	border-collapse: collapse;
+}
+.dataTables_wrapper .dataTable thead th, 
+.dataTables_wrapper .dataTable thead td {
+	border: none;
+}
+.dataTable thead > tr,
+.dataTable tbody > tr {
+	border-bottom: 1px solid #ddd;
+	height: 30px;
+} 
+.dataTable tbody > tr:hover, table.dataTable tbody tr:hover {
+	background: #f5f5f5;
+}
+.btn-default {
+	border: none;
+}
+.dataTables_wrapper .dataTable tbody th, 
+.dataTables_wrapper .dataTable tbody td {
+	padding:8px 15px;
+}
+
+.dataTable {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.dataTable input[type="radio"], .dataTable input[type="checkbox"] {
+    margin:2px 0 0;
+}
+
+.dataTable a,
+.dataTable td {
+    color: #474747;
+}
+
+.dataTable a:hover{
+	color:#f64241;
+}
+.dataTable tbody,
+.dataTable thead {
+    width: 100%;
+}
+
+.dataTable tbody tr {
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+    height: 36px;
+}
+
+.dataTable td {
+    padding: 6px 0;
+}
+
+table.dataTable td > i , table.dataTable td > a > i{
+    color: #8c8c8c;
+}
+
+.dataTables_wrapper .dataTable tbody tr > td, table.dataTable thead th,  table.dataTable thead td{
+	padding: 0;
+	word-break: break-all;
+}
+
+.dataTable tr > td:first-child,.dataTables_wrapper .dataTable tbody tr > td:first-child, table.dataTable thead tr > th:first-child, table.dataTable thead  tr > td:first-child {
+    padding: 0 0 0 16px;
+}
+
+.dataTable tr > td:last-child,.dataTables_wrapper .dataTable tbody tr > td:last-child, table.dataTable thead tr > th:last-child, table.dataTable thead  tr > td:last-child {
+    padding: 0 16px 0 0;
+}
+
+table.dataTable tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.dataTable .odd {
+    background-color: #f9f9f9;
+}
+
+table.dataTable tbody tr:nth-child(odd):hover,table.dataTable tbody tr:hover {
+    background-color: #f3f3f3;
+}
+
+.dataTable tr > td > a > i.iconfont:hover,
+.dataTable tr > td > a > i.iconfont:active,
+.dataTable tr > td > a > i.iconfont:focus {
+    color: #d9534f;
+}
+
+.dataTable a.icon-wrap{
+	text-decoration: none;
+	margin: 0 4px;
+    width: 14px;
+    float: left;
+}
+
+.dataTable a.icon-wrap:first-child{
+	margin-left:4px;
+}
+
+td.dataTables_empty{
+	line-height:36px;
+}
+
+/* 分页 */
+.dataTables_wrapper .dataTables_paginate {
+	position: absolute;
+	bottom: 20px;
+	right: 30px;
+}
+.panel-body .dataTables_wrapper .dataTables_paginate .paginate_button {
+	background: #f3f2f3;
+	border: 1px solid #dcdcdc;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover,
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, 
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+	background: #ed5b56;
+	border-color: #ec352e;
+	color: #fff !important;
+	box-shadow: none;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled, 
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, 
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+	opacity: .6;
+	filter: alpha(opacity=60);
+	background: #f3f2f3;
+	border: 1px solid #dcdcdc;
+}
+
+body .layui-layer-tips > .layui-layer-content {
+	color: #716f6d ;
+}
+
+.layui-layer-setwin .layui-layer-close1 {
+    background-position: 1px -40px;
+}
+
+
+/* 顶部带红色边框的面板样式 */
+.panel-border {
+    width: 100%;
+    height: 100%;
+/*     padding: 10px; */
+}
+.content-wrapper {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-top: 2px solid #e15b52;
+}
+
+
+/* 公告面板 */
+.notice-tit {
+    font-size: 14px;
+}
+h2.notice-tit {
+    height: 39px;
+    line-height: 39px;
+    padding: 0 15px;
+    border-bottom: 1px solid #ddd;
+    margin: 0;
+}
+h2.notice-tit i {
+    display: inline-block;
+    width: 19px;
+    height: 18px;
+    background: url(../img/notice/noticeSprites.png) -4px -5px;
+    position: relative;
+    top: 5px;
+}
+.notice-content {
+    width: 100%;
+    padding: 18px 15px;
+}
+
+
+    /* 公告编辑器 */
+.editor-wrapper .edui-default .edui-editor {
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+.edui-editor-breadcrumb {
+	display: none;
+}
+
+.edit-btn {
+    text-align: right;
+    padding: 20px 0;
+}
+.edit-btn button {
+    margin-right: 7px;
+}
+
+/*树的右键样式*/
+.dropdown-menu > li > a > i.glyphicon{
+	color:#f39800;
+	padding-right: 3px;
+}
+.dropdown-menu > li > a{
+	padding: 3px 16px 3px 12px;
+}
+.dropdown-menu{
+	min-width: 112px;
+}
+
+/* 文件上传、下载 */
+.info .iconfont {
+	display: none;
+	font-size: 16px;
+	color: #6a90d8;
+	cursor: pointer;
+	margin-right: 10px;
+}

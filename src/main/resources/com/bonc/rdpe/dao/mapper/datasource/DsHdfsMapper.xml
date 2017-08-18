@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bonc.rdpe.entity.DsHdfs">
+	<resultMap id="BaseResultMap" type="com.bonc.rdpe.entity.DsHdfs">
+		<id column="id" jdbcType="VARCHAR" property="id" />
+		<result column="ds_name" jdbcType="VARCHAR" property="dsName" />
+		<result column="path" jdbcType="VARCHAR" property="path" />
+		<result column="create_id" jdbcType="VARCHAR" property="createId" />
+		<result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+		<result column="org_id" jdbcType="VARCHAR" property="orgId" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, ds_name, path, create_id, create_time,org_id
+	</sql>
+	<select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from t_ds_hdfs where id = #{id,jdbcType=VARCHAR}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+		delete from t_ds_hdfs where id = #{id,jdbcType=VARCHAR}
+	</delete>
+	<insert id="insert" parameterType="com.bonc.rdpe.entity.DsHdfs">
+		insert into t_ds_hdfs (id,
+		ds_name, 
+		path, create_id, create_time,org_id
+		)
+		values
+		(#{id,jdbcType=VARCHAR}, #{dsName,jdbcType=VARCHAR},
+		#{path,jdbcType=VARCHAR},
+		#{createId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP},
+		#{org_id,jdbcType=VARCHAR}
+		)
+	</insert>
+	<insert id="insertSelective" parameterType="com.bonc.rdpe.entity.DsHdfs">
+		insert into t_ds_hdfs
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="dsName != null">
+				ds_name,
+			</if>
+			<if test="path != null">
+				path,
+			</if>
+			<if test="createId != null">
+				create_id,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+			<if test="orgId != null">
+				org_id,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=VARCHAR},
+			</if>
+			<if test="dsName != null">
+				#{dsName,jdbcType=VARCHAR},
+			</if>
+			<if test="path != null">
+				#{path,jdbcType=VARCHAR},
+			</if>
+			<if test="createId != null">
+				#{createId,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="orgId != null">
+				#{org_id,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="com.bonc.rdpe.entity.DsHdfs">
+		update t_ds_hdfs
+		<set>
+			<if test="dsName != null">
+				ds_name = #{dsName,jdbcType=VARCHAR},
+			</if>
+			<if test="path != null">
+				path = #{path,jdbcType=VARCHAR},
+			</if>
+			<if test="createId != null">
+				create_id = #{createId,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				create_time = #{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="orgId != null">
+				#{org_id,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where id = #{id,jdbcType=VARCHAR}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="com.bonc.rdpe.entity.DsHdfs">
+		update t_ds_hdfs
+		set ds_name = #{dsName,jdbcType=VARCHAR},
+		path = #{path,jdbcType=VARCHAR},
+		create_id = #{createId,jdbcType=VARCHAR},
+		create_time = #{createTime,jdbcType=TIMESTAMP},
+		org_id = #{orgId,jdbcType=VARCHAR}
+		where id = #{id,jdbcType=VARCHAR}
+	</update>
+
+	<select id="selectAllByCondition" parameterType="map" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from t_ds_hdfs where 1=1
+		<if test="dsName != null and dsName != ''">
+			and ds_name like '%${dsName}%'
+		</if>
+		<if test="createId != null">
+			and create_id = #{createId,jdbcType=VARCHAR}
+		</if>
+	</select>
+
+	<!-- 查询出所有的数据 -->
+	<select id="selectAll" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from t_ds_hdfs
+	</select>
+
+</mapper>
